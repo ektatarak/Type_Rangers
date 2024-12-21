@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Practice - Welcome</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-image: url('https://c4.wallpaperflare.com/wallpaper/198/270/331/keyboard-technics-computer-key-wallpaper-preview.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding-top: 50px;    }
+
+        .welcome-container {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 60px 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            max-width: 700px;
+            width: 90%;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #ffdf6c;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        p {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            line-height: 1.8;
+            color: #eaeaea;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        ul li {
+            font-size: 1.2rem;
+            margin: 12px 0;
+            color: #d4d4d4;
+            display: flex;
+            align-items: center;
+        }
+
+        ul li::before {
+            content: '✔';
+            color: #ffdf6c;
+            margin-right: 12px;
+            font-size: 1.4rem;
+        }
+
+        select {
+            font-size: 1.3rem;
+            padding: 10px 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            background-color: #333;
+            color: #fff;
+            border: 1px solid #ff6347;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        select:hover {
+            background-color: #444;
+        }
+
+        button {
+            font-size: 1.3rem;
+            background-color: #ff6347;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 15px rgba(255, 99, 71, 0.4);
+        }
+
+        button:hover {
+            background-color: #e5533d;
+            box-shadow: 0 8px 20px rgba(255, 99, 71, 0.6);
+            transform: translateY(-2px);
+        }
+        /* Navbar Styling */
+.navbar {
+    background-color: #333;
+    padding: 10px 0; 
+    position: fixed; 
+    top: 0;
+    width: 100%; 
+    z-index: 1000; 
+}
+
+.navbar ul {
+    list-style: none; 
+    margin: 0;
+    padding: 0;
+    display: flex; 
+    justify-content: center; 
+}
+
+.navbar li {
+    margin: 0 20px; 
+}
+
+.navbar a {
+    text-decoration: none; 
+    color: white; 
+    font-size: 18px; 
+    transition: color 0.3s; 
+}
+
+.navbar a:hover {
+    color: #ffcc00; 
+}
+
+
+        
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="welcome.html">Home</a></li>
+            <li><a href="index.html">Typing Test</a></li>
+        </ul>
+    </nav>
+   
+    <div class="welcome-container">
+        <h1>Welcome to Typing Practice</h1>
+        <p>Enhance your typing speed and accuracy with engaging exercises. Challenge yourself and monitor your growth!</p>
+        <ul>
+            <li>⏳ Practice for a set time limit</li>
+            <li>📊 Real-time feedback on speed and accuracy</li>
+           
+        </ul>
+
+        <!-- Dropdown for selecting time -->
+        <select id="timeLimit">
+            <option value="1">1 Minute</option>
+            <option value="2">2 Minutes</option>
+            <option value="3">3 Minutes</option>
+            <option value="4">4 Minutes</option>
+            <option value="5">5 Minutes</option>
+            <option value="30">30 Minutes</option>
+        </select>
+
+        <button onclick="startTyping()">Start Typing Practice</button>
+    </div>
+
+    <script>
+        function startTyping() {
+            // Get the selected time value
+            const timeLimit = document.getElementById('timeLimit').value;
+
+            // Redirect to typing practice page with selected time as a query parameter
+            window.location.href = `index.html?time=${timeLimit}`;
+        }
+    </script>
+</body>
+
+</html>
